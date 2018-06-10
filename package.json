@@ -1,0 +1,46 @@
+{
+  "name": "micro-analytics-adapter-postgres",
+  "version": "0.0.1",
+  "description": "Postgres adapter for Micro-Analytics",
+  "main": "index.js",
+  "dependencies": {
+    "micro-analytics-adapter-utils": "^1.0.1",
+    "pg-promise": "^8.4.4"
+  },
+  "devDependencies": {
+    "eslint": "^4.19.1",
+    "eslint-config-prettier": "^2.9.0",
+    "eslint-config-standard": "^11.0.0",
+    "eslint-plugin-import": "^2.12.0",
+    "eslint-plugin-node": "^6.0.1",
+    "eslint-plugin-prettier": "^2.6.0",
+    "eslint-plugin-promise": "^3.8.0",
+    "eslint-plugin-standard": "^3.1.0",
+    "jest": "^23.1.0",
+    "micro-analytics-cli": "^3.1.0",
+    "prettier": "^1.13.5"
+  },
+  "scripts": {
+    "test": "npm test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/toddheslin/micro-analytics-adapter-postgres.git"
+  },
+  "keywords": [
+    "postgres",
+    "postgresql",
+    "analytics",
+    "nodejs",
+    "microservice",
+    "micro",
+    "analytic-server",
+    "node-microservice"
+  ],
+  "author": "Todd Heslin <todd@beingremarkable.me>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/toddheslin/micro-analytics-adapter-postgres/issues"
+  },
+  "homepage": "https://github.com/toddheslin/micro-analytics-adapter-postgres#readme"
+}
