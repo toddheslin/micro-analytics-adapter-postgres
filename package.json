@@ -4,7 +4,6 @@
   "description": "Postgres adapter for Micro-Analytics",
   "main": "index.js",
   "dependencies": {
-    "micro-analytics-adapter-utils": "^1.0.1",
     "pg-promise": "^8.4.4"
   },
   "devDependencies": {
@@ -21,7 +20,7 @@
     "prettier": "^1.13.5"
   },
   "scripts": {
-    "test": "jest --detectOpenHandles"
+    "test": "jest"
   },
   "repository": {
     "type": "git",

@@ -5,7 +5,6 @@ const pgp = require('pg-promise')({
 	// 	console.log('QUERY:', e.query)
 	// }
 })
-
 const db = pgp(process.env.POSTGRES_ANALYTICS)
 
 // will be set during init if everything is OK
