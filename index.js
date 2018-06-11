@@ -155,14 +155,22 @@ const getAll = ({ pathname, before, after }) => {
 }
 
 const put = (pathname, { views = [{}] }) => {
-	// In what cases would we have more than one element in the array?
+	/*
+	* Implementation note: see readme.md
+	*/
 
-	const inserts = views.map(view => {
-		const { time = 0, meta = {} } = view
+	// const inserts = views.map(view => {
+	// 	const { time = 0, meta = {} } = view
+	// 	const sentAt = new Date(time)
+	// 	return { sent_at: sentAt.toISOString(), pathname, meta }
+	// })
+	const inserts = () => {
+		const { time = 0, meta = {} } = views.pop()
 		const sentAt = new Date(time)
-		return { sent_at: sentAt.toISOString(), pathname, meta }
-	})
-	const queries = pgp.helpers.insert(inserts, ['sent_at', 'pathname', 'meta'], schemaTable)
+		return [{ sent_at: sentAt.toISOString(), pathname, meta }]
+	}
+
+	const queries = pgp.helpers.insert(inserts(), ['sent_at', 'pathname', 'meta'], schemaTable)
 	return db.none(queries)
 }
 

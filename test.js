@@ -132,9 +132,8 @@ describe('micro-analytics adapter postgres', () => {
 	})
 
 	it('should return filtered saves from get based on before', async () => {
-		await adapter.put('/filter-before-key', {
-			views: [{ time: 1490623474639 }, { time: 1490623478639 }]
-		})
+		await adapter.put('/filter-before-key', { views: [{ time: 1490623474639 }] })
+		await adapter.put('/filter-before-key', { views: [{ time: 1490623478639 }] })
 
 		expect(await adapter.get('/filter-before-key', { before: 1490623475640 })).toEqual({
 			views: [1490623474639]
@@ -142,9 +141,8 @@ describe('micro-analytics adapter postgres', () => {
 	})
 
 	it('should return filtered saves from get based on after', async () => {
-		await adapter.put('/filter-after-key', {
-			views: [{ time: 1490623474639 }, { time: 1490623478639 }]
-		})
+		await adapter.put('/filter-after-key', { views: [{ time: 1490623474639 }] })
+		await adapter.put('/filter-after-key', { views: [{ time: 1490623478639 }] })
 
 		expect(await adapter.get('/filter-after-key', { after: 1490623475640 })).toEqual({
 			views: [1490623478639]

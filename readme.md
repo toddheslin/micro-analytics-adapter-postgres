@@ -23,6 +23,13 @@ Be sure to include the database name for where we will be reading/writing the an
 E.g. `postgres://username:password@host:port/database?ssl=false&application_name=name
 &fallback_application_name=name&client_encoding=encoding`. All query params on the string are optional but some managed postgres providers might require `ssl=true`
 
+## A note on the PUT method
+This was previously implemented to accept multiple views coming in on the same request i.e. a batch request.
+
+However, it seems that this isn't the case for the current micro-analytics library. Instead, it is sending all of the **old** data from a prior `GET` request along with the new request at the end. Whilst I don't like this implementation as it will scalability issues when we only really need to append data, I'll keep it for compability with the raw code base.
+
+Should performance issues arise, we'll raise such issues in the core `micro-analytics` codebase.
+
 ## Testing
 1. Create a test database and table. In this example we'll call it 'analytics' see `setup.sql` for an example.
 2. Run test using your test database credentials as the `POSTGRES_ANALYTICS` env variable, e.g
