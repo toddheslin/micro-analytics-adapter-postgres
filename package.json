@@ -21,7 +21,7 @@
     "prettier": "^1.13.5"
   },
   "scripts": {
-    "test": "npm test"
+    "test": "jest --detectOpenHandles"
   },
   "repository": {
     "type": "git",
